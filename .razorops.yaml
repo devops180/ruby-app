@@ -1,12 +1,8 @@
-global:
-  variables:
-  - DATABASE_URL=postgres://root:secret@localhost/docker
-  - RAILS_ENV=test
-  runner:
-    os_image: ubuntu
-    
 tasks:
-  build-image:
+  build-image-vm:
+    runner:
+      os_image: ubuntu
+      
     steps:
     - checkout
     - docker/build:
