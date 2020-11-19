@@ -7,7 +7,7 @@ tasks:
     steps:
     - checkout
     - docker/build:
-        image: ghcr.io/RazorOp/rails-sample-app
+        image: ghcr.io/RazorOp/rails-sample-app/rails-app
         push: true
         tags: ["${CI_COMMIT_SHA}", "latest"]
         dockerfile: Dockerfile
