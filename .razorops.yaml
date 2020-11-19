@@ -37,16 +37,3 @@ tasks:
         dockerfile: Dockerfile
         tags: ["latest", "${CI_COMMIT_SHA:0:8}", "${CI_REPO_BRANCH}"]
         push: true
-
-  #   - workspace/persist:
-  #       paths: [rails]
-  #   when: branch == "master"
-
-  # deploy:
-  #   depends: [rspec, build]
-  #   when: branch == "master"
-  #   steps:
-  #   - workspace/attach
-  #   - commands:
-  #     - DOCKER_IMAGE=ghcr.io/RazorOp/rails-sample-app:${CI_COMMIT_SHA:0:8}
-  #     - kubectl set image deployments/web web=$DOCKER_IMAGE
