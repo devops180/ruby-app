@@ -1,12 +1,14 @@
+global:
+  runner:
+    os_image: ubuntu
+
 tasks:
-  build-image-vm:
-    runner:
-      os_image: ubuntu
-      
+  build-image:
     steps:
     - checkout
     - docker/build:
         image: ghcr.io/RazorOp/rails-sample-app
-        dockerfile: Dockerfile
-        tags: ["latest", "${CI_COMMIT_SHA:0:8}", "${CI_REPO_BRANCH}"]
         push: true
+        tags: ["${CI_COMMIT_SHA}", "latest"]
+        dockerfile: Dockerfile
+        context: .
