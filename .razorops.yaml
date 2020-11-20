@@ -1,6 +1,7 @@
 global:
   runner:
     os_image: ubuntu
+    version: v2
 
 tasks:
   build-image:
