@@ -10,6 +10,6 @@ tasks:
     - docker/build:
         image: ghcr.io/razorops-public/rails-sample-app/rails-app
         push: true
-        tags: ["latest"]
+        tags: ["latest", "${CI_COMMIT_SHA:0:8}"]
         dockerfile: Dockerfile
         context: .
