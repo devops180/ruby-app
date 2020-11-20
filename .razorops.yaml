@@ -1,5 +1,5 @@
+version: v2
 global:
-  version: v2
   runner:
     os_image: ubuntu
 
