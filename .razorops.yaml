@@ -3,7 +3,7 @@ tasks:
     steps:
     - checkout
     - docker/build:
-      image: 'ruby:2.7.2-stretch'
+      image: razorci/ruby
       tags:
         - latest
         - ${CI_COMMIT_SHA:0:8}
