@@ -1,15 +1,8 @@
-version: v2
-global:
-  runner:
-    os_image: ubuntu
-
 tasks:
   build-image:
-    steps:
-    - checkout
-    - docker/build:
-        image: ghcr.io/razorops-public/rails-sample-app/rails-app
-        push: true
-        tags: ["latest", "${CI_COMMIT_SHA:0:8}"]
-        dockerfile: Dockerfile
-        context: .
+    type: build
+    image: 'ruby:2.7.2-stretch'
+    tags:
+      - latest
+      - ${CI_COMMIT_SHA:0:8}
+    push: true
