@@ -1,4 +1,4 @@
-FROM ruby:2.7.2-slim-stretch
+FROM ruby:3.0-alpine
 
 RUN apt-get update && apt-get install -y \
   curl \
