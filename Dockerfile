@@ -1,4 +1,4 @@
-FROM ruby:3.0.0-stretch
+FROM ruby:3.0.0
 
 RUN apt-get update && apt-get install -qq -y --no-install-recommends build-essential nodejs libpq-dev git
 
@@ -11,7 +11,7 @@ RUN bundle config set without 'test development'
 RUN cd $APP_HOME && gem install bundler && bundle install
 
 COPY package.json yarn.lock $APP_HOME
-RUN cd $APP_HOME && yarn install
+RUN cd $APP_HOME
 
 ADD ./ $APP_HOME
 WORKDIR $APP_HOME
