@@ -3,6 +3,6 @@ tasks:
     steps:
     - checkout
     - docker/build:
-        image: ruby:3.0
+        image: registry.digitalocean.com/test-demo
         tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
         push: true
