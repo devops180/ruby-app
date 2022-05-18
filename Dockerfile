@@ -11,7 +11,7 @@ RUN bundle config set without 'test development'
 RUN cd $APP_HOME && gem install bundler && bundle install
 
 COPY package.json yarn.lock $APP_HOME
-RUN cd $APP_HOME
+RUN cd $APP_HOME && yarn install --pure-lockfile
 
 ADD ./ $APP_HOME
 WORKDIR $APP_HOME
