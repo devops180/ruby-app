@@ -4,5 +4,5 @@ tasks:
     - checkout
     - docker/build:
         image: registry.digitalocean.com/test-demo
-        tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
+        tags: ["latest", "${CI_REPO_BRANCH}"]
         push: true
