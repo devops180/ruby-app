@@ -1,6 +1,6 @@
 FROM ruby:3.0.0
 
-RUN apt-get update && apt-get install -qq -y --no-install-recommends build-essential nodejs libpq-dev git
+RUN apt-get update && apt-get install -qq -y --no-install-recommends build-essential nodejs libpq-dev git yarn
 
 
 ENV RAILS_ENV=production RACK_ENV=production SECRET_KEY_BASE=xpto APP_HOME=/app/
