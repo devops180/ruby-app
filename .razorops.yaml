@@ -3,6 +3,6 @@ tasks:
     steps:
     - checkout
     - docker/build:
-        image: registry.digitalocean.com/test-demo
+        image: test-demo
         tags: ["latest", "${CI_REPO_BRANCH}"]
         push: true
