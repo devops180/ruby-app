@@ -3,6 +3,6 @@ tasks:
     steps:
     - checkout
     - docker/build:
-        image: razorci/ruby
+        image: ruby:3.0
         tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
         push: true

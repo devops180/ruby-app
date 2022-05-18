@@ -1,4 +1,4 @@
-FROM ruby:3.0.4
+FROM ruby:3.0.0
 
 RUN apt-get update && apt-get install -qq -y --no-install-recommends build-essential nodejs libpq-dev git
 
