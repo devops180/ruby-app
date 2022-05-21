@@ -13,4 +13,5 @@ tasks:
     - DOCKER_TAG=${CI_COMMIT_SHA:0:8}
     steps:
     - commands:
+      - kubectl config use-conetxt testdemo
       - kubectl -n default set image deployment.v1.apps/web web=registry.digitalocean.com/test-demo/test-demo:$DOCKER_TAG
