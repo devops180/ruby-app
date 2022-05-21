@@ -1,8 +1,16 @@
 tasks:
-  build-image:
+  build:
     steps:
     - checkout
     - docker/build:
         image: registry.digitalocean.com/test-demo/test-demo
-        tags: ["${CI_COMMIT_SHA}", "latest", "${CI_REPO_BRANCH}"]
+        tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
         push: true
+
+  deploy:
+    depends: [build]
+    variables:
+    - DOCKER_TAG=${CI_COMMIT_SHA:0:8}
+    steps:
+    - commands:
+      - kubectl -n default set image deployment.v1.apps/web web=registry.digitalocean.com/test-demo/test-demo:$DOCKER_TAG
