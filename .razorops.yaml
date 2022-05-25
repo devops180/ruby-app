@@ -7,6 +7,7 @@ tasks:
         tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
         push: true
 
+
   deploy:
     depends: [build]
     variables:
