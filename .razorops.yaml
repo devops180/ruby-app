@@ -13,4 +13,5 @@ tasks:
     - DOCKER_TAG=${CI_COMMIT_SHA:0:8}
     steps:
     - commands:
+        # This will trigger deployment rollout 
       - kubectl -n default set image deployment.v1.apps/web web=registry.digitalocean.com/ruby-micro/demo:$DOCKER_TAG
