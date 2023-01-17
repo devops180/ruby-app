@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: web
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: web
+ template:
+   metadata:
+     labels:
+       app: web
+   spec:
+     imagePullSecrets:
+     - name: micro-svc
+     containers:
+       - image: registry.digitalocean.com/ruby-micro/demo:latest
+         name: web
+         envFrom:
+           - configMapRef:
+               name: config-map
+         ports:
+           - name: backend-port
+             containerPort: 3000
