@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: saurabh@codecrux.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - http01:
+       ingress:
+         class: nginx
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: app
+spec:
+  dnsNames:
+    - cloud-native.me
+  secretName: web-cert
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: Issuer

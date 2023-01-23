@@ -13,9 +13,9 @@ spec:
        app: web
    spec:
      imagePullSecrets:
-     - name: micro-svc
+     - name: micro-pro
      containers:
-       - image: registry.digitalocean.com/ruby-micro/demo:latest
+       - image: registry.digitalocean.com/micro-pro/demo:5652347a
          name: web
          envFrom:
            - configMapRef:

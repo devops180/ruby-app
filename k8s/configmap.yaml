@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
  name: config-map
 data:
- DATABASE_URL: "postgresql://doadmin:<...>.db.ondigitalocean.com:25060/micro?sslmode=require"
+ DATABASE_URL: "postgresql://doadmin:AVNS_BvTm_nevkzwPaDh0g9u@db-postgresql-blr1-98697-do-user-6817712-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require"
  RAILS_SERVE_STATIC_FILES: "1"
  RAILS_LOG_TO_STDOUT: "true"
  RAILS_ENV: "production"
  RACK_ENV: "production"
- DOMAIN_NAME: "www.yourdomain.com"
- SECRET_KEY_BASE: "1e5216a1208a00a69..."
+ DOMAIN_NAME: "cloud-native.me"
+ SECRET_KEY_BASE: "1e5216a1208a00a691e5216a1208a00a691e5216a1208a00a69"

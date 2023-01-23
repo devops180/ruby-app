@@ -3,7 +3,7 @@ tasks:
     steps:
     - checkout
     - docker/build:
-        image: registry.digitalocean.com/ruby-micro/demo
+        image: registry.digitalocean.com/micro-pro/demo
         tags: ["${CI_COMMIT_SHA:0:8}", "latest", "${CI_REPO_BRANCH}"]
         push: true
 
@@ -14,4 +14,4 @@ tasks:
     steps:
     - commands:
         # This will trigger deployment rollout 
-      - kubectl -n default set image deployment.v1.apps/web web=registry.digitalocean.com/ruby-micro/demo:$DOCKER_TAG
+      - kubectl -n default set image deployment.v1.apps/web web=registry.digitalocean.com/micro-pro/demo:$DOCKER_TAG
